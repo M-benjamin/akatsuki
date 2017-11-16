@@ -10,4 +10,15 @@ router.get('/', (req, res) => {
     });
 });
 
+/* GET sign up page. */
+router.get('/sign_up', (req, res) => {
+    res.render('signup');
+});
+
+/* POST sign up page. */
+router.post('/sign_up', (req, res) => {
+    res.render('signup');
+});
+
+
 module.exports = router;

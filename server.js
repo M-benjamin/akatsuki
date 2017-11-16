@@ -8,11 +8,12 @@ const bodyParser = require('body-parser');
 const db = require('./database/init');
 
 //set the rending engine
-app.set('views', path.join(__dirname, 'public'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //configuration of routers
 const index = require('./routes/index');
+const profil = require('./routes/profil');
 
 //for configuration
 app.use(bodyParser.json());
@@ -22,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //call the index page
 app.use('/', index);
-
+// app.use('/profil', profil);
 
 app.use((req, res, next) => {
     let err = new Error('Not found');
