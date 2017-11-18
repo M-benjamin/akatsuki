@@ -1,36 +1,292 @@
+html,
+body {
+    font-family: 'Indie Flower', cursive;
+    font-size: 14px;
+    font-weight: 300;
+    font-size: 20px;
+}
 
-    html,body {
-      font-family: 'Open Sans', serif;
-      font-size: 14px;
-      font-weight: 300;
-    }
-    .hero.is-success {
-      background: #000000;
-    }
-    .hero .nav, .hero.is-success .nav {
-      -webkit-box-shadow: none;
-      box-shadow: none;
-    }
-    .box {
-      margin-top: 5rem;
-    }
-    .avatar {
-      margin-top: -70px;
-      padding-bottom: 20px;
-    }
-    .avatar img {
-      padding: 5px;
-      background: #fff;
-      border-radius: 50%;
-      -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-      box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-    }
-    input {
-      font-weight: 300;
-    }
-    p {
-      font-weight: 700;
-    }
-    p.subtitle {
-      padding-top: 1rem;
-    }
+.hero-signup {
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero-signup .title_signup {
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-signin {
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 750px;
+}
+
+.hero-signin .title_signin {
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero.is-success {
+    background: #000000;
+}
+
+.hero-body .title {
+    color: black;
+    font-family: 'Indie Flower', cursive;
+}
+
+.hero .nav,
+.hero.is-success .nav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.box {
+    margin-top: 5rem;
+}
+
+.avatar {
+    margin-top: -70px;
+    padding-bottom: 20px;
+}
+
+.avatar img {
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);
+    box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);
+}
+
+input {
+    font-weight: 300;
+}
+
+p {
+    font-weight: 700;
+}
+
+p.subtitle {
+    padding-top: 1rem;
+}
+
+
+/* ===================================
+ FOR DASHBOARD
+====================================*/
+
+.nav-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.nav-fixed-left {
+    position: fixed;
+    top: 35px;
+    left: 0;
+}
+
+.articles {
+    margin-left: 300px;
+}
+
+navbar.is-white {
+    background: #F0F2F4;
+}
+
+#dashbord {
+    background-image: url('../img/bg2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#dashbord .image {
+    border-radius: 50%;
+    margin-left: 30px;
+}
+
+#dashbord .content {
+    color: white;
+}
+
+#dashbord .promo-bg {
+    background-color: #ba131a;
+    font-weight: bold;
+}
+
+#dashbord .promo-bg h1 {
+    color: white;
+}
+
+#dashbord .promo-bg h2 {
+    color: white;
+}
+
+.navbar-brand .brand-text {
+    font-size: 1.11rem;
+    font-weight: bold;
+}
+
+.articles {
+    margin: 5rem 0;
+}
+
+.articles .content p {
+    line-height: 1.9;
+    margin: 15px 0;
+}
+
+.author-image {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+}
+
+.media-center {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.media-content {
+    margin-top: 3rem;
+}
+
+.article,
+.promo-block {
+    margin-top: 6rem;
+}
+
+div.column.is-8:first-child {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.article-title {
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 2;
+}
+
+.article-subtitle {
+    color: #909AA0;
+    margin-bottom: 3rem;
+}
+
+.article-body {
+    line-height: 1.4;
+    margin: 0 6rem;
+}
+
+.promo-block .container {
+    margin: 1rem 5rem;
+}
+
+
+/* ===================================
+ FOR PROFILE PAGE
+====================================*/
+
+navbar.is-white {
+    background: #F0F2F4;
+}
+
+#profile .promo-bg {
+    background-color: #ba131a;
+    font-weight: bold;
+}
+
+#profile .promo-bg h1 {
+    color: white;
+}
+
+#profile .promo-bg h2 {
+    color: white;
+}
+
+#profile {
+    background-image: url('../img/bg2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 700px;
+}
+
+#profile .image {
+    border-radius: 50%;
+    margin-left: 30px;
+}
+
+#profile .content {
+    color: white;
+}
+
+
+/* ===================================
+ FOR UPDATE PROFILE PAGE
+====================================*/
+
+#profile-update .promo-bg {
+    background-color: #ba131a;
+    font-weight: bold;
+}
+
+#profile-update .promo-bg h1 {
+    color: white;
+}
+
+#profile-update .promo-bg h2 {
+    color: white;
+}
+
+#profile-update {
+    background-image: url('../img/bg2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#profile-update .image {
+    border-radius: 50%;
+    margin-left: 30px;
+}
+
+#profile-update .content {
+    color: white;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    padding-top: 140px;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}

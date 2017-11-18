@@ -1,0 +1,67 @@
+{
+    "modules": [{
+            "name": "Introduction au Javascript",
+            "teacher": "Majdi Toumi"
+        },
+        {
+            "name": "Javascript avancee",
+            "teacher": "Majdi Toumi"
+        },
+        {
+            "name": "Node js",
+            "teacher": "Majdi Toumi"
+        },
+        {
+            "name": "Javascript user interfaces",
+            "teacher": "Majdi Toumi"
+        },
+        {
+            "name": "Algorithmie avancée",
+            "teacher": "Marc Boussoulade"
+        },
+        {
+            "name": "Bases de données relationnelle + NoSQL",
+            "teacher": "Christophe Ollivier"
+        },
+        {
+            "name": "Architectures n-tiers",
+            "teacher": "Sami Radi"
+        },
+        {
+            "name": "Sécurite informatique",
+            "teacher": "Majdi Toumi"
+        },
+        {
+            "name": "iOS",
+            "teacher": "Pierre-Yves Touzain"
+        },
+        {
+            "name": "Cross-platforme",
+            "teacher": "Majdi Toumi"
+        },
+        {
+            "name": "Ui/x design",
+            "teacher": "Gui Perrier"
+        },
+        {
+            "name": "Management & communication",
+            "teacher": "Caroline Richshoffer Dagorne"
+        },
+        {
+            "name": "Scrum",
+            "teacher": "Alexandra Tritz"
+        },
+        {
+            "name": "Cahier des charges fonctionnel",
+            "teacher": "Julie Poupat"
+        },
+        {
+            "name": "Cahier des charges technique",
+            "teacher": "Majdi Toumi"
+        },
+        {
+            "name": "Prototypage et MVP",
+            "teacher": "Julie Poupat"
+        }
+    ]
+}

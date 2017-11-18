@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 const db = require('../database/init');
 
 /* GET home page. */
@@ -17,27 +18,32 @@ router.get('/sign_in', (req, res) => {
 router.post('/sign_in', (req, res) => {
 
 
-    let user = {
+    let userForm = {
         username: req.body.username,
         password: req.body.password
     }
 
-    console.log(usersF);
 
     //request to database for find user by username
-    db.users.findOne({ where: { username: usersF.username } }).then(u => {
+    db.users.findOne({ where: { username: userForm.username } }).then(u => {
+
+        console.log('get from database ' + u.id + u.username);
 
         if (!u) {
             //if not find username redirect
             res.redirect('/sign_in');
-        } else if (u.checkpassword(password)) {
+        } else if (u.checkPassword(userForm.password)) {
             /*
              * if it find something  create an method 
              * wich go to database check 
              * the password 
              */
-            // req.session.id = u;
-            // req.session.id = u.dataValues;
+            console.log(req.session);
+            req.session.id = u.id;
+            req.session.name = u.username;
+
+            console.log('my session is:' + req.session);
+
             res.redirect('/dashboard');
 
         } else {
@@ -59,6 +65,7 @@ router.post('/sign_up', (req, res) => {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         email: req.body.email,
+        birthday: req.body.birth,
         password: req.body.password,
         password_confirm: req.body.password_confirm
     }
@@ -77,6 +84,16 @@ router.post('/sign_up', (req, res) => {
 
 /* Get Dashboard */
 router.get('/dashboard', (req, res) => {
+    console.log(req.session.name);
+
+    db.users.findOne({ where: { username: req.session.name } }).then(data => {
+
+        res.render('dashboard', { user: 'ben' });
+    })
+});
+
+/* Get Dashboard */
+router.post('/dashboard', (req, res) => {
     res.render('dashboard');
 });
 

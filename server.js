@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = process.argv[2] || 8080;
+const port = process.argv[2] || 8000;
 const bodyParser = require('body-parser');
-
+const session = require('express-session');
+const cookie = require('cookie-parser');
 //use database
 const db = require('./database/init');
 
@@ -11,24 +12,27 @@ const db = require('./database/init');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-//configuration of routers
-const index = require('./routes/index');
-const profil = require('./routes/profil');
 
 //for configuration
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookie());
+app.use(session({ secret: 'ben' }));
 
+
+//configuration of routers
+const index = require('./routes/index');
+const profil = require('./routes/profil');
 
 //call the index page
 app.use('/', index);
-// app.use('/profil', profil);
+app.use('/profil', profil);
 
-app.use((req, res, next) => {
-    let err = new Error('Not found');
-
-});
+// app.use((req, res, next) => {
+//     let err = new Error('Not found');
+//     next();
+// });
 
 //start server
 db.sequelize.sync().then(() => {
