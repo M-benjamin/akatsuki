@@ -50,7 +50,7 @@
                         <a href="#" class="item"><span class="icon"><i class="fa fa-inbox"></i></span><span class="name">Home</span></a>
                         <a href="#" class="item active"><span class="icon"><i class="fa fa-user"></i></span><span class="name">Profile</span></a>
                         <a href="#" class="item"><span class="icon"><i class="fa fa-envelope-o"></i></span><span class="name">Messenger</span></a>
-                        <a href="/profil/ben/module" class="item"><span class="icon"><i class="fa fa-folder-o"></i></span><span class="name">Modules</span></a>
+                        <a href="/profil/<%= username %>/module" class="item"><span class="icon"><i class="fa fa-folder-o"></i></span><span class="name">Modules</span></a>
                     </div>
                 </div>
             </aside>
@@ -83,9 +83,10 @@
                                 </div>
                                 <div class="media-content has-text-centered">
                                     <p>
-                                        My name is benjamin, my username is beny and my email is ben@yahoo.fr, I was born on Mon, 12 december 1992
+                                        My name is <strong class="has-text-primary"><%= firstname + " " + lastname %></strong>, my username is <strong class="has-text-warning"><%= username %></strong strong class="has-text-success"> and my email is <strong class="has-text-info"><%= email %></strong>,
+                                        I was born on <strong class="has-text-danger"><%= birthday %></strong>
                                     </p>
-                                    <a href="/profil/ben/update" class="button is-link is-outlined">Update</a>
+                                    <a href="/profil/<%= username %>/update" class="button is-link is-outlined">Update</a>
                                     <a type="button" id="myBtn" class="button is-danger is-outlined">Delete</a>
 
                                 </div>

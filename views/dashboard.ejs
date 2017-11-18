@@ -24,7 +24,7 @@
 
                             <div class="navbar-dropdown">
 
-                                <a class="navbar-item">
+                                <a href="/logout" class="navbar-item">
                 Logout
               </a>
                                 <hr class="navbar-divider">
@@ -48,7 +48,7 @@
                     </figure>
                     <div class="main">
                         <a href="#" class="item active"><span class="icon"><i class="fa fa-inbox"></i></span><span class="name">Home</span></a>
-                        <a href="/profil/ben" class="item"><span class="icon"><i class="fa fa-user"></i></span><span class="name">Profile</span></a>
+                        <a href="/profil/<%= user %>" class="item"><span class="icon"><i class="fa fa-user"></i></span><span class="name">Profile</span></a>
                         <a href="#" class="item"><span class="icon"><i class="fa fa-envelope-o"></i></span><span class="name">Messenger</span></a>
                         <a href="#" class="item"><span class="icon"><i class="fa fa-folder-o"></i></span><span class="name">Modules</span></a>
                     </div>
@@ -64,10 +64,11 @@
                         <div class="hero-body">
                             <div class="container">
                                 <h1 class="title">
-                                    <i class="fa fa-bell-o"></i> Hello, benjamin
+                                    <i class="fa fa-bell-o"></i> Hello,
+                                    <%= user %>
                                 </h1>
                                 <h2 class="subtitle">
-                                    Mardi, 24 Novembre 2017
+                                    <%= dateDay %>
                                 </h2>
                             </div>
                         </div>
@@ -82,9 +83,12 @@
                                     <img src="img/black.jpg" class="author-image" alt="Placeholder image">
                                 </div>
                                 <div class="media-content has-text-centered">
-                                    <p class="title article-title">Introducing a new feature for paid subscribers</p>
+                                    <p class="title article-title">
+                                        <%= citation %>
+                                    </p>
                                     <p class="subtitle is-6 article-subtitle">
-                                        <a href="#">@d</a> on October 7, 2017
+                                        <a href="#">@author</a>
+                                        <%= author %>
                                     </p>
                                 </div>
                             </div>

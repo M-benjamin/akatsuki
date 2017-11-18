@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const request = require('request');
+const moment = require('moment');
 
 
 const db = require('../database/init');
@@ -14,7 +16,9 @@ router.get('/sign_in', (req, res) => {
     res.render('signin');
 });
 
-/* POST sign up page. */
+/**============================
+ * Post sign up page
+ ==============================*/
 router.post('/sign_in', (req, res) => {
 
 
@@ -41,6 +45,11 @@ router.post('/sign_in', (req, res) => {
             console.log(req.session);
             req.session.id = u.id;
             req.session.name = u.username;
+            req.session.firstname = u.firstname;
+            req.session.lastname = u.lastname;
+            req.session.birthday = u.birthday;
+            req.session.email = u.email;
+
 
             console.log('my session is:' + req.session);
 
@@ -52,12 +61,16 @@ router.post('/sign_in', (req, res) => {
     })
 });
 
-/* GET sign up page. */
+/**============================
+ * get sign up page
+ ==============================*/
 router.get('/sign_up', (req, res) => {
     res.render('signup');
 });
 
-/* POST sign up page. */
+/**============================
+ * POst sign in
+ ==============================*/
 router.post('/sign_up', (req, res) => {
     //create an object which get value from my form
     let user = {
@@ -82,19 +95,53 @@ router.post('/sign_up', (req, res) => {
     });
 });
 
-/* Get Dashboard */
+/**============================
+ * Get Dashboard page
+ ==============================*/
 router.get('/dashboard', (req, res) => {
-    console.log(req.session.name);
+    //get the api an print it
+    let url = "http://quotes.stormconsultancy.co.uk/random.json";
+    request({
+        url: url,
+        json: true
+    }, (error, response, body) => {
+        if (error) {
+            console.log("Unable to fetch citation");
+        } else {
+            console.log("author is : " + body.author);
+            console.log("the user is : " + req.session.name);
 
-    db.users.findOne({ where: { username: req.session.name } }).then(data => {
+            let dateDay = moment().locale("fr").format('LLLL');
+            let author = body.author;
+            let citation = body.quote;
 
-        res.render('dashboard', { user: 'ben' });
+            db.users.findOne({ where: { username: req.session.name } }).then(data => {
+
+                res.render('dashboard', {
+                    user: data.username,
+                    dateDay: dateDay,
+                    author: author,
+                    citation: citation
+                });
+            })
+        }
     })
+
 });
 
-/* Get Dashboard */
+/**============================
+ * For logout
+ ==============================*/
 router.post('/dashboard', (req, res) => {
     res.render('dashboard');
+});
+
+/**============================
+ * For logout
+ ==============================*/
+router.get('/logout', function(req, res) {
+    req.session.destroy();
+    res.redirect('/sign_in');
 });
 
 module.exports = router;

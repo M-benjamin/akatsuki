@@ -24,10 +24,10 @@
 
                             <div class="navbar-dropdown">
 
-                                <a class="navbar-item">
+                                <a href="/logout" class="navbar-item">
         Logout
       </a>
-                                <hr class="navbar-divider">
+                                <hr class="navbar-divider ">
 
                             </div>
                         </div>
@@ -35,22 +35,22 @@
                 </div>
             </div>
         </nav>
-        <div class="columns" id="mail-app">
-            <aside class="column is-2 aside hero is-fullheight nav-fixed-left">
+        <div class="columns " id="mail-app ">
+            <aside class="column is-2 aside hero is-fullheight nav-fixed-left ">
                 <div>
-                    <div class="compose has-text-centered">
-                        <a class="is-block is-bold">
+                    <div class="compose has-text-centered ">
+                        <a class="is-block is-bold ">
                             <h1>PROFILE - UPDATE</h1>
                         </a>
                     </div>
-                    <figure class="image is-128x128">
-                        <img src="/img/sharingan.png">
+                    <figure class="image is-128x128 ">
+                        <img src="/img/sharingan.png ">
                     </figure>
-                    <div class="main">
-                        <a href="#" class="item"><span class="icon"><i class="fa fa-inbox"></i></span><span class="name">Home</span></a>
-                        <a href="/profil/ben" class="item active"><span class="icon"><i class="fa fa-user"></i></span><span class="name">Profile</span></a>
+                    <div class="main ">
+                        <a href="# " class="item "><span class="icon "><i class="fa fa-inbox "></i></span><span class="name ">Home</span></a>
+                        <a href="/profil/<%= username %>" class="item active"><span class="icon"><i class="fa fa-user"></i></span><span class="name">Profile</span></a>
                         <a href="#" class="item"><span class="icon"><i class="fa fa-envelope-o"></i></span><span class="name">Messenger</span></a>
-                        <a href="#" class="item"><span class="icon"><i class="fa fa-folder-o"></i></span><span class="name">Modules</span></a>
+                        <a href="/profil/<%= username %>/module" class="item"><span class="icon"><i class="fa fa-folder-o"></i></span><span class="name">Modules</span></a>
                     </div>
                 </div>
             </aside>
@@ -87,32 +87,32 @@
                                             <div class="field">
                                                 <label class="label has-text-left">User Name</label>
                                                 <div class="control">
-                                                    <input name="username" class="input is-small" type="text" placeholder="First Name" autofocus="" />
+                                                    <input name="username" class="input is-small" type="text" placeholder="<%= username %>" autofocus="" />
                                                 </div>
                                             </div>
                                             <div class="field">
                                                 <label class="label has-text-left">First Name</label>
                                                 <div class="control">
-                                                    <input name="firstname" class="input is-small" type="text" placeholder="First Name" autofocus="" />
+                                                    <input name="firstname" class="input is-small" type="text" placeholder="<%= firstname %>" autofocus="" />
                                                 </div>
                                             </div>
                                             <div class="field">
                                                 <label class="label has-text-left">Last Name</label>
                                                 <div class="control">
-                                                    <input name="lastname" class="input is-small" type="text" placeholder="Last Name" autofocus="" />
+                                                    <input name="lastname" class="input is-small" type="text" placeholder="<%= lastname %>" autofocus="" />
                                                 </div>
                                             </div>
 
                                             <div class="field">
                                                 <label class="label has-text-left">E-mail</label>
                                                 <div class="control">
-                                                    <input name="email" class="input is-small" type="mail" placeholder="E-mail" autofocus="" />
+                                                    <input name="email" class="input is-small" type="mail" placeholder="<%= email %>" autofocus="" />
                                                 </div>
                                             </div>
                                             <div class="field">
                                                 <label class="label has-text-left">Birthday</label>
                                                 <div class="control">
-                                                    <input name="birth" class="input is-small" type="date" placeholder="E-mail" autofocus="" />
+                                                    <input name="birth" class="input is-small" type="date" placeholder="<%= birthday %>" autofocus="" />
                                                 </div>
                                             </div>
                                             <input type="submit" value="Register" class="button is-block is-info is-small">
